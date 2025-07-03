@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className="fixed w-full bg-background/80 backdrop-blur-sm z-50 shadow-md">
       <div className="flex items-center justify-between px-6 py-4 max-w-6xl mx-auto">
-        <h1 className="text-xl font-bold text-glow">MithunKarthik</h1>
+        <h1 className="text-xl font-bold text-glow">GlowStack</h1>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 text-sm text-white">
