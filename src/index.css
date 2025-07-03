@@ -5,4 +5,10 @@
 body {
   @apply bg-background text-white;
   font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+html {
+  scroll-padding-top: 5rem; /* Keeps content from hiding under navbar */
 }
