@@ -8,7 +8,7 @@ const Hero = () => {
         MITHUNKARTHIK K
       </h1>
       <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-xl">
-        Full Stack Developer | React.js • Django • Python • JavaScript
+        Full Stack Developer | React.js • Django • Python • Java
       </p>
 
       <div className="mt-6 space-x-4">
