@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Loader from './components/Loader';
+import Experience from './components/Experience';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -23,6 +24,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <Experience/>
       <Skills />
       <Projects />
       <Contact />

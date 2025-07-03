@@ -17,4 +17,18 @@ html {
     @apply px-6 py-2 bg-glow text-black font-semibold rounded shadow-md hover:scale-105 transition duration-200;
   }
 }
+@layer utilities {
+  @keyframes glowRing {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-glow {
+    animation: glowRing 6s linear infinite;
+  }
+}
 
