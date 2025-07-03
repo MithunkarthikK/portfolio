@@ -15,24 +15,26 @@ const Hero = () => {
                 Full Stack Developer | React.js • Django • Python • Java
             </p>
 
-            <div className="mt-6 space-x-4">
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <a
                     href="https://github.com/MithunkarthikK"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-glow underline hover:text-cyan-400"
-                >
-                    GitHub
+                    className="px-6 py-2 bg-glow text-black font-semibold rounded hover:scale-105 transition duration-200 shadow-md">GitHub
                 </a>
                 <a
                     href="https://www.linkedin.com/in/mithunkarthikk"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-glow underline hover:text-cyan-400"
-                >
-                    LinkedIn
+                    className="px-6 py-2 bg-glow text-black font-semibold rounded hover:scale-105 transition duration-200 shadow-md">LinkedIn
+                </a>
+                <a
+                    href="/k.k.mithunkarthik_resume.pdf"
+                    download
+                    className="px-6 py-2 bg-glow text-black font-semibold rounded hover:scale-105 transition duration-200 shadow-md">Resume
                 </a>
             </div>
+
         </div>
     );
 };

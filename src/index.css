@@ -10,5 +10,11 @@ body {
 }
 
 html {
-  scroll-padding-top: 5rem; /* Keeps content from hiding under navbar */
+  scroll-padding-top: 5rem; 
 }
+@layer components {
+  .btn-glow {
+    @apply px-6 py-2 bg-glow text-black font-semibold rounded shadow-md hover:scale-105 transition duration-200;
+  }
+}
+
