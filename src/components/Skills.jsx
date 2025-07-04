@@ -6,6 +6,7 @@ import {
   FaNodeJs,
   FaPython,
   FaGithub,
+  FaJava,
 } from "react-icons/fa";
 import { SiExpress, SiMongodb, SiDjango, SiGit } from "react-icons/si";
 
@@ -17,10 +18,11 @@ const skills = {
     { name: "JavaScript", icon: <FaJs /> },
   ],
   Backend: [
+    { name: "Python", icon: <FaPython /> },
     { name: "Node.js", icon: <FaNodeJs /> },
     { name: "Express.js", icon: <SiExpress /> },
     { name: "Django", icon: <SiDjango /> },
-    { name: "Python", icon: <FaPython /> },
+    { name: "Java", icon: <FaJava /> },
   ],
   Database: [{ name: "MongoDB", icon: <SiMongodb /> }],
   "Version Control": [

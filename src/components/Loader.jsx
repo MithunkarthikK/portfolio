@@ -29,7 +29,7 @@ const GlowStackLoader = () => {
 
       {/* Glowing Brand Text */}
       <div className="mt-6 text-center text-light text-lg sm:text-xl font-semibold tracking-widest animate-glow-text">
-        Loading <span className="text-5xl sm:text-2xl font-extrabold tracking-wide mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 animate-pulse">GlowStack ...</span>
+        Loading <span className="text-1xl sm:text-2xl font-extrabold tracking-wide mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 animate-pulse">GlowStack ...</span>
       </div>
     </div>
   );
