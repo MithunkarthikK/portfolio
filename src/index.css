@@ -10,13 +10,30 @@ body {
 }
 
 html {
-  scroll-padding-top: 5rem; 
+  scroll-padding-top: 5rem;
 }
+
 @layer components {
   .btn-glow {
     @apply px-6 py-2 bg-glow text-black font-semibold rounded shadow-md hover:scale-105 transition duration-200;
   }
+
+  /* 🔥 Consistent glow container */
+  .glow-card {
+    @apply relative bg-[#121212] border border-[#3b82f6] rounded-2xl p-6 shadow-md hover:shadow-[0_0_15px_#3b82f6] transition-all duration-300;
+  }
+
+  /* 🔥 Section with animated glow background */
+  .glow-section {
+    @apply relative overflow-hidden rounded-3xl p-10 bg-[#121212] shadow-[0_0_40px_rgba(255,115,0,0.15)];
+  }
+
+  /* ✨ Highlight tags or skills */
+  .glow-pill {
+    @apply inline-flex items-center gap-2 text-sm text-white bg-[#1f1f23] px-3 py-1 rounded-full border border-[#3b82f6];
+  }
 }
+
 @layer utilities {
   @keyframes glowRing {
     0% {
@@ -30,5 +47,24 @@ html {
   .animate-glow {
     animation: glowRing 6s linear infinite;
   }
-}
 
+  @keyframes glowMove {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.25;
+    }
+    50% {
+      transform: scale(1.05) translateY(-5px);
+      opacity: 0.4;
+    }
+  }
+
+  .animate-glow-move {
+    animation: glowMove 8s ease-in-out infinite;
+  }
+
+  /* 🔁 Glowing background layer */
+  .glow-background {
+    @apply absolute -inset-5 rounded-3xl bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600 blur-2xl opacity-25 z-0 animate-glow-move;
+  }
+}

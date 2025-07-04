@@ -1,9 +1,49 @@
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+
 const Footer = () => {
   return (
-    <footer className="bg-background border-t border-glow py-6 text-center text-sm text-gray-500">
-      <p>
-        © {new Date().getFullYear()} <span className="text-glow font-semibold">GlowStack</span> · Built by Mithunkarthik K
-      </p>
+    <footer className="relative bg-[#0e0e10] pt-10 pb-6 text-white overflow-hidden border-t border-[#3b82f6]">
+      {/* Glow bar */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-1 bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400 blur-md opacity-70 animate-glow-move" />
+
+      {/* Main content */}
+      <div className="max-w-4xl mx-auto text-center space-y-4">
+        <h2 className="text-2xl font-bold text-glow">Let’s Connect</h2>
+
+        <p className="text-sm text-gray-400">
+          Open to opportunities, collaborations, or a quick chat!
+        </p>
+
+        {/* Social Icons */}
+        <div className="flex justify-center gap-6 text-xl mt-4">
+          <a
+            href="https://github.com/MithunkarthikK"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-glow transition duration-300"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/mithunkarthikk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-glow transition duration-300"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="mailto:kkmithunkarthik@gmail.com"
+            className="text-white hover:text-glow transition duration-300"
+          >
+            <FaEnvelope />
+          </a>
+        </div>
+
+        <p className="text-xs text-gray-600 pt-6 border-t border-[#1f1f23]">
+          © {new Date().getFullYear()} GlowStack by Mithunkarthik — Built with 💙
+        </p>
+      </div>
     </footer>
   );
 };

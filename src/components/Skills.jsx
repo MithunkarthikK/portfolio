@@ -1,26 +1,64 @@
-const skills = [
-  "Python", "Java", "JavaScript", "React.js",
-  "Django", "HTML5", "CSS3", "SQL"
-];
+import {
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaNodeJs,
+  FaPython,
+  FaGithub,
+} from "react-icons/fa";
+import { SiExpress, SiMongodb, SiDjango, SiGit } from "react-icons/si";
+
+const skills = {
+  Frontend: [
+    { name: "React.js", icon: <FaReact /> },
+    { name: "HTML5", icon: <FaHtml5 /> },
+    { name: "CSS3", icon: <FaCss3Alt /> },
+    { name: "JavaScript", icon: <FaJs /> },
+  ],
+  Backend: [
+    { name: "Node.js", icon: <FaNodeJs /> },
+    { name: "Express.js", icon: <SiExpress /> },
+    { name: "Django", icon: <SiDjango /> },
+    { name: "Python", icon: <FaPython /> },
+  ],
+  Database: [{ name: "MongoDB", icon: <SiMongodb /> }],
+  "Version Control": [
+    { name: "Git", icon: <SiGit /> },
+    { name: "GitHub", icon: <FaGithub /> },
+  ],
+};
 
 const Skills = () => {
   return (
     <div
       id="skills"
-      className="bg-background text-white py-12 sm:py-16 px-4 sm:px-6 border-b border-glow"
+      className="bg-[#0e0e10] min-h-screen py-16 px-6 text-white"
       data-aos="fade-up"
     >
-      <h2 className="text-3xl sm:text-4xl font-bold text-glow mb-8 text-center">
+      <h2 className="text-4xl font-bold text-center mb-12 text-white">
         Skills
       </h2>
-      <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-        {skills.map((skill, idx) => (
-          <span
-            key={idx}
-            className="px-5 py-2 bg-glow bg-opacity-10 border border-glow rounded-full text-glow font-medium text-sm sm:text-base shadow-md hover:scale-105 transition-all duration-200"
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
+        {Object.entries(skills).map(([category, list], index) => (
+          <div
+            key={index}
+            className="relative bg-neutral-900/90 backdrop-blur-lg border border-neutral-700 rounded-xl p-6 shadow-md hover:shadow-[0_0_15px_#3b82f6] transition-all duration-300"
           >
-            {skill}
-          </span>
+            <h3 className="text-xl font-semibold text-white mb-4">{category}</h3>
+            <div className="flex flex-wrap gap-3">
+              {list.map((skill, i) => (
+                <span
+                  key={i}
+                  className="flex items-center gap-2 text-sm text-white bg-[#1f1f23] px-3 py-1 rounded-full border border-[#3b82f6]"
+                >
+                  {skill.icon}
+                  {skill.name}
+                </span>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </div>

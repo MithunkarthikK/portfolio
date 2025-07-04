@@ -1,4 +1,3 @@
-// File: src/components/Experience.jsx
 const experiences = [
   {
     company: "Sam Core Solutions",
@@ -20,22 +19,30 @@ const Experience = () => {
   return (
     <div
       id="experience"
-      className="bg-background text-white py-16 px-6 border-b border-glow"
+      className="bg-[#0e0e10] min-h-screen py-16 px-6 text-white"
       data-aos="fade-up"
     >
-      <h2 className="text-4xl font-bold text-glow mb-12 text-center">
+      <h2 className="text-4xl font-bold text-center mb-12 text-white">
         Work Experience
       </h2>
 
-      <div className="relative border-l border-glow max-w-4xl mx-auto pl-6">
-        {experiences.map((exp, i) => (
-          <div key={i} className="mb-10 ml-2 relative">
-            <div className="absolute w-3 h-3 bg-glow rounded-full -left-1.5 top-1.5 animate-pulse" />
-            <h3 className="text-lg font-semibold text-glow">{exp.role}</h3>
-            <p className="text-sm text-gray-400">{exp.company} · {exp.duration}</p>
-            <p className="mt-2 text-gray-300 text-sm leading-relaxed">{exp.description}</p>
+      <div className="grid max-w-4xl mx-auto">
+        <div className="relative bg-neutral-900/90 backdrop-blur-lg border border-neutral-700 rounded-xl p-8 shadow-md hover:shadow-[0_0_15px_#3b82f6] transition-all duration-300">
+          <div className="border-l-2 border-[#3b82f6] pl-6">
+            {experiences.map((exp, index) => (
+              <div key={index} className="mb-10 ml-2 relative">
+                <div className="absolute w-3 h-3 bg-[#3b82f6] rounded-full -left-1.5 top-1.5 shadow-[0_0_8px_#3b82f6]" />
+                <h3 className="text-lg font-semibold text-white">{exp.role}</h3>
+                <p className="text-sm text-gray-400 mb-1">
+                  {exp.company} · {exp.duration}
+                </p>
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  {exp.description}
+                </p>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );

@@ -59,42 +59,43 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="bg-background text-white py-16 px-6"
+      className="bg-[#0e0e10] min-h-screen py-16 px-6 text-white"
       data-aos="fade-up"
     >
-      <h2 className="text-4xl font-bold text-glow mb-12 text-center">
-        Projects
+      <h2 className="text-4xl font-bold text-center mb-12 text-white">
+        My Projects
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-background border border-glow rounded-2xl p-6 shadow-lg hover:shadow-glow transition duration-300"
+            className="relative bg-neutral-900/90 backdrop-blur-lg border border-neutral-700 rounded-xl p-6 shadow-md hover:shadow-[0_0_15px_#3b82f6] transition-all duration-300"
           >
-            <h3 className="text-2xl font-semibold text-glow mb-2">
+            <h3 className="text-xl font-semibold text-white mb-3">
               {project.title}
             </h3>
 
-            <div className="flex flex-wrap gap-2 mb-3 items-center">
-              {project.tech.map((techItem, i) => (
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.tech.map((tech, i) => (
                 <span
                   key={i}
-                  className="flex items-center gap-1 text-xs text-glow border border-glow rounded-full px-3 py-1 bg-glow/10"
+                  className="flex items-center gap-2 text-sm text-white bg-[#1f1f23] px-3 py-1 rounded-full border border-[#3b82f6]"
                 >
-                  {techItem.icon} {techItem.name}
+                  {tech.icon} {tech.name}
                 </span>
               ))}
             </div>
 
-            <p className="text-gray-300 mb-4">{project.description}</p>
+            <p className="text-gray-300 text-sm mb-4">{project.description}</p>
 
-            <div className="flex gap-4">
+            <div className="flex gap-4 text-sm">
               {project.demo && (
                 <a
                   href={project.demo}
                   target="_blank"
+                  className="text-blue-400 hover:underline"
                   rel="noopener noreferrer"
-                  className="text-sm text-glow underline hover:text-cyan-300"
                 >
                   Live Demo
                 </a>
@@ -103,8 +104,8 @@ const Projects = () => {
                 <a
                   href={project.link}
                   target="_blank"
+                  className="text-blue-400 hover:underline"
                   rel="noopener noreferrer"
-                  className="text-sm text-glow underline hover:text-cyan-300"
                 >
                   GitHub
                 </a>
@@ -116,5 +117,6 @@ const Projects = () => {
     </div>
   );
 };
+
 
 export default Projects;

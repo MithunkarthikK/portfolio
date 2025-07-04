@@ -1,25 +1,32 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react'; 
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="fixed w-full bg-background/80 backdrop-blur-sm z-50 shadow-md">
+    <nav className="fixed w-full bg-background/80 backdrop-blur-sm z-50 shadow-md border-b border-blue-500/30">
       <div className="flex items-center justify-between px-6 py-4 max-w-6xl mx-auto">
-        <h1 className="text-xl font-bold text-glow">GlowStack</h1>
+        <h1 className="text-xl sm:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 animate-pulse">
+          GlowStack
+        </h1>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 text-sm text-white">
-          <li><a href="#about" className="hover:text-glow">About</a></li>
-          <li><a href="#skills" className="hover:text-glow">Skills</a></li>
-          <li><a href="#projects" className="hover:text-glow">Projects</a></li>
-          <li><a href="#contact" className="hover:text-glow">Contact</a></li>
+          {['about', 'skills', 'projects', 'contact'].map((section) => (
+            <li key={section}>
+              <a
+                href={`#${section}`}
+                className="hover:text-blue-400 transition duration-200"
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </a>
+            </li>
+          ))}
         </ul>
 
-        {/* Hamburger Button (mobile) */}
+        {/* Mobile Toggle */}
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-white">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -27,14 +34,21 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-background border-t border-glow px-6 pb-4">
+        <div className="md:hidden bg-[#111111] border-t border-blue-500/30 px-6 pb-4 animate-fade-in-down">
           <ul className="space-y-4 text-white text-sm">
-            <li><a href="#about" onClick={toggleMenu} className="block hover:text-glow">About</a></li>
-            <li><a href="#skills" onClick={toggleMenu} className="block hover:text-glow">Skills</a></li>
-            <li><a href="#projects" onClick={toggleMenu} className="block hover:text-glow">Projects</a></li>
-            <li><a href="#contact" onClick={toggleMenu} className="block hover:text-glow">Contact</a></li>
+            {['about', 'skills', 'projects', 'contact'].map((section) => (
+              <li key={section}>
+                <a
+                  href={`#${section}`}
+                  onClick={toggleMenu}
+                  className="block hover:text-blue-400 transition"
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       )}
