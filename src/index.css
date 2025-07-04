@@ -14,57 +14,89 @@ html {
 }
 
 @layer components {
+  /* 💠 Glowing Button */
   .btn-glow {
     @apply px-6 py-2 bg-glow text-black font-semibold rounded shadow-md hover:scale-105 transition duration-200;
   }
 
-  /* 🔥 Consistent glow container */
+  /* 💠 Project/Skill cards with soft blue glow */
   .glow-card {
     @apply relative bg-[#121212] border border-[#3b82f6] rounded-2xl p-6 shadow-md hover:shadow-[0_0_15px_#3b82f6] transition-all duration-300;
   }
 
-  /* 🔥 Section with animated glow background */
+  /* 💠 Section card wrapper with subtle glow aura */
   .glow-section {
-    @apply relative overflow-hidden rounded-3xl p-10 bg-[#121212] shadow-[0_0_40px_rgba(255,115,0,0.15)];
+    @apply relative overflow-hidden rounded-3xl p-10 bg-[#121212] shadow-[0_0_25px_rgba(59,130,246,0.15)];
   }
 
-  /* ✨ Highlight tags or skills */
+  /* 💠 Skill/project tech stack pills */
   .glow-pill {
     @apply inline-flex items-center gap-2 text-sm text-white bg-[#1f1f23] px-3 py-1 rounded-full border border-[#3b82f6];
+  }
+
+  /* 💠 Preloader ring */
+  .glow-ring {
+    @apply w-20 h-20 border-4 border-[#3b82f6] border-t-transparent rounded-full animate-spin;
   }
 }
 
 @layer utilities {
-  @keyframes glowRing {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  .animate-glow {
-    animation: glowRing 6s linear infinite;
+  /* 🔁 Blue glow shimmer background for sections */
+  .glow-background {
+    @apply absolute -inset-5 rounded-3xl bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-600 blur-2xl opacity-20 z-0 animate-glow-move;
   }
 
   @keyframes glowMove {
     0%, 100% {
       transform: scale(1);
-      opacity: 0.25;
+      opacity: 0.2;
     }
     50% {
-      transform: scale(1.05) translateY(-5px);
+      transform: scale(1.05) translateY(-4px);
       opacity: 0.4;
     }
   }
-
   .animate-glow-move {
     animation: glowMove 8s ease-in-out infinite;
   }
 
-  /* 🔁 Glowing background layer */
-  .glow-background {
-    @apply absolute -inset-5 rounded-3xl bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600 blur-2xl opacity-25 z-0 animate-glow-move;
+  @keyframes glowPulse {
+    0%, 100% {
+      text-shadow: 0 0 6px #3b82f6, 0 0 12px #3b82f6;
+    }
+    50% {
+      text-shadow: 0 0 12px #3b82f6, 0 0 24px #3b82f6;
+    }
   }
+  .animate-glowText {
+    animation: glowPulse 2.5s ease-in-out infinite;
+  }
+
+  @keyframes bounceGlow {
+    0%, 100% {
+      transform: translateY(0);
+      opacity: 0.4;
+    }
+    50% {
+      transform: translateY(-6px);
+      opacity: 1;
+    }
+  }
+  .animate-bounceGlow {
+    animation: bounceGlow 1.2s ease-in-out infinite;
+  }
+}
+@keyframes glow-ring {
+  0%, 100% {
+    stroke-dashoffset: 0;
+    opacity: 0.4;
+  }
+  50% {
+    stroke-dashoffset: 20;
+    opacity: 1;
+  }
+}
+
+.animate-glow-ring {
+  animation: glow-ring 2s ease-in-out infinite;
 }

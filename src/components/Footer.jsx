@@ -8,7 +8,7 @@ const Footer = () => {
 
       {/* Main content */}
       <div className="max-w-4xl mx-auto text-center space-y-4">
-        <h2 className="text-2xl font-bold text-glow">Let’s Connect</h2>
+        <h2 className="text-5xl sm:text-2xl font-extrabold tracking-wide mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 animate-pulse">Let’s Connect</h2>
 
         <p className="text-sm text-gray-400">
           Open to opportunities, collaborations, or a quick chat!
