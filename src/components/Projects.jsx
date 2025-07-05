@@ -33,7 +33,7 @@ const projects = [
     ],
     description:
       "A cultural travel guide app to explore famous locations with pre-planned routes and insights for tourists.",
-    link: "#",
+    link: "https://github.com/MithunkarthikK/Tourist-Guide.git",
   },
   {
     title: "Foodie",
@@ -42,7 +42,7 @@ const projects = [
     ],
     description:
       "A responsive online food ordering platform where users can browse restaurants, customize orders, and pay securely.",
-    link: "#",
+    link: "https://github.com/MithunkarthikK/Foodie.git",
   },
   {
     title: "Mobile Number Tracker",
@@ -51,7 +51,7 @@ const projects = [
     ],
     description:
       "A tool that retrieves location and basic details from a given mobile number using Python packages.",
-    link: "#",
+    link: "https://github.com/MithunkarthikK/Tracking-Phno-Details.git",
   },
 ];
 
